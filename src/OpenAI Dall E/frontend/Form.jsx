@@ -15,16 +15,19 @@ export default function Form() {
 
   const generateImageRequest = async (prompt, size) => {
     try {
-      const response = await fetch("/openai/generateimage", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt,
-          size,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:4000/openai/generateimage",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+            size,
+          }),
+        }
+      );
       const data = await response.json();
       const imageUrl = data.data;
       setImgSrc(imageUrl);
