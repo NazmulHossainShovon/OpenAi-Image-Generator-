@@ -16,7 +16,7 @@ export default function Form() {
   const generateImageRequest = async (prompt, size) => {
     try {
       const response = await fetch(
-        "http://localhost:4000/openai/generateimage",
+        "https://openai-backend-wmsc.onrender.com/openai/generateimage",
         {
           method: "POST",
           headers: {
